@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #f9a825;
+  --brand-dark: #ef7b1a;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-surface-50 text-surface-900 font-sans antialiased;
+  min-height: 100dvh;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { @apply bg-surface-300 rounded-full; }
+
+/* Smooth transitions */
+.page-enter { animation: fadeUp 0.3s ease-out; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Calendar cell animation */
+.cal-cell { transition: all 0.15s ease; }
+.cal-cell:active { transform: scale(0.92); }
